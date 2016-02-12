@@ -32,7 +32,7 @@
             org.switchyard.*;${switchyard.osgi.import.switchyard.version},
             org.switchyard.config.model;${switchyard.osgi.import.switchyard.version},
             !org.apache.cxf.ws.addressing.impl,
-            org.apache.cxf.*;version="[2.7,3.1)",
+            org.apache.cxf.*;version="[2.7,3.2)",
             *
         </switchyard.osgi.import>
     </properties>

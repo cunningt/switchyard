@@ -31,7 +31,7 @@ import org.apache.camel.spi.DataFormat;
 public class CamelServiceRoute extends RouteBuilder {
 
     
-    DataFormat bindy = new BindyCsvDataFormat("org.switchyard.quickstarts.camel.bindy");
+    DataFormat bindy = new BindyCsvDataFormat(org.switchyard.quickstarts.camel.bindy.Order.class);
     
     /**
      * The Camel route is configured via this method.  The from endpoint is required to be a SwitchYard service.

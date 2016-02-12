@@ -186,6 +186,8 @@
                         <!-- Fails in test kit, but not standalone -->
                         <exclude>**/CamelSAPBindingQuickstartTest.java</exclude>
                         <!-- Requires local SAP installation -->
+			<!-- Exclude CamelAMQP until working out qpid client issue -->
+			<exclude>**/CamelAMQPBindingQuickstartTest.java</exclude>
                     </excludes>
                 </configuration>
             </plugin>

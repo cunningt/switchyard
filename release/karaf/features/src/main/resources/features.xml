@@ -89,6 +89,7 @@
     <feature name="switchyard-amqp" version="${project.version}" resolver="(obr)">
         <feature version="${project.version}">switchyard-jms</feature>
         <feature version="${version.org.apache.camel.features}">camel-amqp</feature>
+	<bundle>wrap:mvn:org.apache.qpid/qpid-amqp-1-0-client-jms/${version.qpid}</bundle>
         <bundle>mvn:org.switchyard.components/switchyard-component-camel-amqp/${project.version}</bundle>
     </feature>
 
@@ -147,6 +148,7 @@
 
     <feature name="switchyard-cdi" version="${project.version}" resolver="(obr)">
         <feature version="${version.org.ops4j.pax.cdi}">pax-cdi-1.2-weld</feature>
+        <feature version="${version.org.ops4j.pax.cdi}">pax-cdi-weld</feature>
         <feature version="${version.org.apache.deltaspike}">deltaspike-core</feature>
         <bundle>mvn:org.apache.camel/camel-cdi/${version.org.apache.camel}</bundle>
     </feature>

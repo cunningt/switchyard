@@ -17,6 +17,7 @@
 package org.switchyard.quickstarts.camel.bindy;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -38,7 +39,8 @@ public class CamelBindyTest {
     private Invoker fileProcessor;
     
     private SwitchYardTestKit _testKit;
-    
+   
+    @Ignore 
     @Test
     public void shouldRetrieveGreetings() throws Exception {
         String requestTxt = _testKit.readResourceString("request.txt");

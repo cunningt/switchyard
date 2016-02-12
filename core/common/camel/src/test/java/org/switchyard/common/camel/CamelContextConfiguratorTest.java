@@ -60,10 +60,16 @@ public class CamelContextConfiguratorTest {
         Assert.assertEquals(ManagementStatisticsLevel.Off, 
                 context.getManagementStrategy().getStatisticsLevel());
         
-        domain.setProperty(CamelContextConfigurator.PERFORMANCE_STATISTICS, "All");
+        domain.setProperty(CamelContextConfigurator.PERFORMANCE_STATISTICS, "Extended");
         CamelContextConfigurator.configure(context, domain);
-        Assert.assertEquals(ManagementStatisticsLevel.All, 
+        Assert.assertEquals(ManagementStatisticsLevel.Extended,
                 context.getManagementStrategy().getStatisticsLevel());
+
+        domain.setProperty(CamelContextConfigurator.PERFORMANCE_STATISTICS, "Default");
+        CamelContextConfigurator.configure(context, domain);
+        Assert.assertEquals(ManagementStatisticsLevel.Default,
+                context.getManagementStrategy().getStatisticsLevel());
+                            
     }
 	
 	@Test

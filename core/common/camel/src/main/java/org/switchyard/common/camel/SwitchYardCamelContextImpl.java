@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ServiceLoader;
 import java.util.concurrent.atomic.AtomicInteger;
+import javax.enterprise.inject.spi.BeanManager;
 
 import org.apache.camel.cdi.CdiBeanRegistry;
 import org.apache.camel.cdi.CdiInjector;
@@ -123,7 +124,8 @@ public class SwitchYardCamelContextImpl extends DefaultCamelContext implements S
         final List<Registry> registries = new ArrayList<Registry>();
         registries.add(new JndiRegistry());
         if (isEnableCdiIntegration()) {
-            registries.add(new CdiBeanRegistry());
+            BeanManager bm = CDIUtil.lookupBeanManager();
+            registries.add(new CdiBeanRegistry(bm));
         }
         registries.add(_writeableRegistry);
 
@@ -205,7 +207,8 @@ public class SwitchYardCamelContextImpl extends DefaultCamelContext implements S
         }
 
         static void addCdiRegistry(List<Registry> registries) {
-            registries.add(new CdiBeanRegistry());
+            BeanManager bm = CDIUtil.lookupBeanManager();
+            registries.add(new CdiBeanRegistry(bm));
         }
 
         public static void setCdiInjector(SwitchYardCamelContextImpl context) {
